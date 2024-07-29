@@ -6,3 +6,4 @@ class Solution:
             if num2 in dic:
                 return [dic[num2], i]
             dic[num] = i
+        return []
