@@ -1,7 +1,7 @@
 class Solution:
     def minimumCost(self, source: str, target: str, original: List[str], changed: List[str], cost: List[int]) -> int:
 
-        def djikstra(s, adj):
+        def dijkstra(s, adj):
             dist = [math.inf] * 26
             dist[ord(s) - ord('a')] = 0
             pq = []
@@ -31,7 +31,7 @@ class Solution:
             if source[i] in dist_map:
                 dist = dist_map[source[i]]
             else:
-                dist = djikstra(source[i], adj)
+                dist = dijkstra(source[i], adj)
                 dist_map[source[i]] = dist
             cost = dist[ord(target[i]) - ord('a')]
             if math.isinf(cost):
